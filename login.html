@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <script >
+    function done(){
+        if(document.getElementById("fname").value==""){
+             document.getElementById("error_fname").innerHTML="This field is required!";
+             Go = false;
+             document.getElementById("error_fname").style.display = "block"
+         }
+         else{
+            document.getElementById("error_fname").style.display = "none"
+         }
+         if(document.getElementById("lname").value==""){
+             document.getElementById("error_lname").innerHTML="This field is required!";
+             Go = false;
+             document.getElementById("error_lname").style.display = "block"
+         }
+         else{
+            document.getElementById("error_lname").style.display = "none"
+         }
+         if(document.getElementById("password2").value==""){
+             document.getElementById("error_password2").innerHTML="Please Confirm Your Password!";
+             Go = false;
+             document.getElementById("error_password2").style.display = "block"
+         }
+         else{
+            document.getElementById("error_password2").style.display = "none"
+         }
+         if(document.getElementById("email").value==""){
+             document.getElementById("error_email").innerHTML="This field is required!";
+             Go = false;
+             document.getElementById("error_email").style.display = "block"
+         }
+         else{
+            document.getElementById("error_email").style.display = "none"
+         }
+         if(document.getElementById("password").value==""){
+             document.getElementById("error_password").innerHTML="This Field Is Required!";
+             Go = false;
+             document.getElementById("error_password").style.display = "block"
+         }
+         else{
+            document.getElementById("error_password").style.display = "none"
+         }
+        
+         if(document.getElementById("password2").value !=document.getElementById("password").value){
+             document.getElementById("error_password2").innerHTML="Please Enter The Correct Password!";
+             Go = false;
+         }
+         
+         if(document.getElementById("birth").value==""){
+             document.getElementById("error_date").innerHTML="This Field Is Required!";
+             Go = false;
+         }
+         else{
+            document.getElementById("error_date").style.display = "none"
+         }
+         if(document.getElementById("city").value == "0"){
+             document.getElementById("error_city").innerHTML="Please Select Your Province!";
+             Go = false;
+         }
+         else{
+            document.getElementById("error_city").style.display = "none"
+         }
+     }
+         
+    </script>
+
+
+</head>
+<body>
+    <div id="register">
+        <h1 class="head">Register Here.</h1>
+        <table>
+            <tr>
+                <td>User Email:</td>
+                <td><input id="email" type="text"><span id="error_email"></span><br></td> 
+              
+            </tr>
+            <tr>
+                <td>First Name:</td>
+                <td><input id="fname" type="text"><span id="error_fname"></span><br></td>
+
+            </tr>
+            <tr>
+                <td>Last Name:</td>
+                <td><input id="lname" type="text"><span id="error_lname"></span><br></td>
+              
+            </tr>
+            <tr>
+                <td>Password:</td>
+                <td><input id="password" type="password"><span id="error_password"></span><br></td>
+
+            </tr>
+            <tr>
+                <td>Comfirm Password:</td>
+                <td><input id="password2" type="password"><span id="error_password2"></span><br></td>
+            </tr>
+            <tr>
+                <td>Birthdate:</td>
+                <td><input id="birth" type="date"><span id="error_date"></span><br></td>
+
+            </tr>
+            <tr>
+                <td>Select Province:</td>
+                <td>
+                    <select id="city">
+                        <option value=0 >--PROVINCE--</option>
+                        <option>ON</option>
+                        <option>QC</option>
+                        <option>NS</option>
+                        <option>NB</option>
+                        <option>MB</option>
+                        <option>BC</option>
+                        <option>PE</option>
+                        <option>SK</option>
+                        <option>AB</option>
+                        <option>NL</option>
+                    </select><span id="error_city"></span>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><button id="signup" onclick="done()">Sign Up</button></td>
+
+            </tr>
+          </table>
+   </div>
+    <div id="login">
+        <h1>Registered Successfully</h1>
+        <p>Login!!!</p>
+        <table>
+            <tr>
+                <td>E_mail:</td>
+                <td><input id="login-email" type="email" ><span id="email-error"></span><br></td>
+            </tr>
+            <tr>
+                <td>Password:</td>
+                <td><input id="login-password" type ="password"><span id="password-error"></span><br></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><a class="button" id="submit" href="#" onclick="checking()">login</a></td>
+            </tr>
+        </table>  
+    </div>
+</body>
+</html>
