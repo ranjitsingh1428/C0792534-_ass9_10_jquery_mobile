@@ -11,7 +11,7 @@
         if(document.getElementById("fname").value==""){
              document.getElementById("error_fname").innerHTML="This field is required!";
              Go = false;
-             document.getElementById("error_fname").style.display = "block"
+             document.getElementById("error_fname").style.display = "inline"
          }
          else{
             document.getElementById("error_fname").style.display = "none"
@@ -19,7 +19,7 @@
          if(document.getElementById("lname").value==""){
              document.getElementById("error_lname").innerHTML="This field is required!";
              Go = false;
-             document.getElementById("error_lname").style.display = "block"
+             document.getElementById("error_lname").style.display = "inline"
          }
          else{
             document.getElementById("error_lname").style.display = "none"
@@ -27,7 +27,7 @@
          if(document.getElementById("password2").value==""){
              document.getElementById("error_password2").innerHTML="Please Confirm Your Password!";
              Go = false;
-             document.getElementById("error_password2").style.display = "block"
+             document.getElementById("error_password2").style.display = "inline"
          }
          else{
             document.getElementById("error_password2").style.display = "none"
@@ -35,7 +35,7 @@
          if(document.getElementById("email").value==""){
              document.getElementById("error_email").innerHTML="This field is required!";
              Go = false;
-             document.getElementById("error_email").style.display = "block"
+             document.getElementById("error_email").style.display = "inline"
          }
          else{
             document.getElementById("error_email").style.display = "none"
@@ -43,7 +43,7 @@
          if(document.getElementById("password").value==""){
              document.getElementById("error_password").innerHTML="This Field Is Required!";
              Go = false;
-             document.getElementById("error_password").style.display = "block"
+             document.getElementById("error_password").style.display = "inline"
          }
          else{
             document.getElementById("error_password").style.display = "none"
@@ -51,12 +51,14 @@
         
          if(document.getElementById("password2").value !=document.getElementById("password").value){
              document.getElementById("error_password2").innerHTML="Please Enter The Correct Password!";
+             document.getElementById("error_password2").style.display = "inline"
              Go = false;
          }
          
          if(document.getElementById("birth").value==""){
              document.getElementById("error_date").innerHTML="This Field Is Required!";
              Go = false;
+             document.getElementById("error_date").style.display = "inline"
          }
          else{
             document.getElementById("error_date").style.display = "none"
@@ -64,9 +66,10 @@
          if(document.getElementById("city").value == "0"){
              document.getElementById("error_city").innerHTML="Please Select Your Province!";
              Go = false;
+             document.getElementById("error_city").style.display = "inline"
          }
          else{
-            document.getElementById("error_city").style.display = "none"
+             document.getElementById("error_city").style.display = "none"
          }
      }
          
@@ -75,9 +78,9 @@
 
 </head>
 <body>
-    <div id="register">
-        <h1 class="head">Register Here.</h1>
-        <table>
+    <div id="Sign_in">
+        <h1 class="head" align="center">Sign In Here.</h1>
+        <table align="center">
             <tr>
                 <td>User Email:</td>
                 <td><input id="email" type="text"><span id="error_email"></span><br></td> 
@@ -127,28 +130,27 @@
             </tr>
             <tr>
                 <td></td>
-                <td><button id="signup" onclick="done()">Sign Up</button></td>
+                <td><button id="signup" onclick="done()">Sign In</button></td>
 
             </tr>
           </table>
    </div>
     <div id="login">
-        <h1>Registered Successfully</h1>
-        <p>Login!!!</p>
-        <table>
+        <table align="center">
             <tr>
-                <td>E_mail:</td>
-                <td><input id="login-email" type="email" ><span id="email-error"></span><br></td>
+                <td>EMAIL:</td>
+                <td><input type="email" id="email"><span id="error_email"></span><br></td>
+            </tr>
+            
+            <tr>
+                <td>PASSWORD:</td>
+                <td><input type="password" id="pass"><span id="error_password"></span><br></td>
             </tr>
             <tr>
-                <td>Password:</td>
-                <td><input id="login-password" type ="password"><span id="password-error"></span><br></td>
+                <td><br><br><br><b></td>
+                <td><a class="button" id="submit" href="#" onclick="validate()">login</a></td>
             </tr>
-            <tr>
-                <td></td>
-                <td><a class="button" id="submit" href="#" onclick="checking()">login</a></td>
-            </tr>
-        </table>  
+        </table>    
     </div>
 </body>
 </html>
